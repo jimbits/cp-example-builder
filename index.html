@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>addEventListener()</title>
+		<link rel="stylesheet" href="/css/global.css" />
+
+		<link rel="stylesheet" href="./css/atom-one-dark.min.css" />
+		<script src="js/index.js" type="module"></script>
+	</head>
+	<body class="bg-zinc-50 p-4">
+		<header class="text-center mt-12">
+			<svg
+				id="js-logo"
+				class="w-16 h-16 inline"
+				xmlns="http://www.w3.org/2000/svg"
+				xmlns:xlink="http://www.w3.org/1999/xlink"
+				aria-hidden="true"
+				role="img"
+				preserveAspectRatio="xMidYMid meet"
+				viewBox="0 0 256 256">
+				<path class="fill-[#F7DF1E]" d="M0 0h256v256H0V0Z"></path>
+				<path
+					d="m67.312 213.932l19.59-11.856c3.78 6.701 7.218 12.371 15.465 12.371c7.905 0 12.89-3.092 12.89-15.12v-81.798h24.057v82.138c0 24.917-14.606 36.259-35.916 36.259c-19.245 0-30.416-9.967-36.087-21.996m85.07-2.576l19.588-11.341c5.157 8.421 11.859 14.607 23.715 14.607c9.969 0 16.325-4.984 16.325-11.858c0-8.248-6.53-11.17-17.528-15.98l-6.013-2.58c-17.357-7.387-28.87-16.667-28.87-36.257c0-18.044 13.747-31.792 35.228-31.792c15.294 0 26.292 5.328 34.196 19.247l-18.732 12.03c-4.125-7.389-8.591-10.31-15.465-10.31c-7.046 0-11.514 4.468-11.514 10.31c0 7.217 4.468 10.14 14.778 14.608l6.014 2.577c20.45 8.765 31.963 17.7 31.963 37.804c0 21.654-17.012 33.51-39.867 33.51c-22.339 0-36.774-10.654-43.819-24.574"></path>
+			</svg>
+			<h1 class="text-zinc-800 text-xl text-center font-semibold my-6">
+				addEventListener(<span class="text-sm text-zinc-400 px-0.5 font-medium"
+					>eventType</span
+				>,
+				<span class="text-sm text-zinc-500 px-0.5 font-medium"
+					>eventHandlerFunction</span
+				>)
+			</h1>
+		</header>
+
+		<main>
+			<section class="relative w-fit mx-auto">
+				<pre class="px-12 py-6"><code>
+const inputElements = document.getElementsByTagName("#js-logo");
+inputElements.addEventListener("click", onEventHandler);
+
+function onEventHandler(e) {
+document.body.style.backgroundColor="green"
+}</code></pre>
+				<button id="copy" class="absolute right-3 top-3">
+					<svg
+						class="w-5 h-5 fill-zinc-200 hover:fill-emerald-400"
+						stroke-width="0"
+						viewBox="0 0 16 16"
+						xmlns="http://www.w3.org/2000/svg">
+						<path
+							fill-rule="evenodd"
+							d="M8 7a.5.5 0 0 1 .5.5V9H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V10H6a.5.5 0 0 1 0-1h1.5V7.5A.5.5 0 0 1 8 7z"></path>
+						<path
+							d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+						<path
+							d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+					</svg>
+				</button>
+			</section>
+			<dl class="max-w-xl mx-auto mt-6">
+				<dt class="text-sm font-semibold text-zinc-900">Step 1</dt>
+				<dd class="mb-3 text-zinc-600 text-sm">
+					Create a reference variable that contains the DOM Element you would
+					like to attach an event too.
+				</dd>
+
+				<dt class="text-sm font-semibold text-zinc-900">Step 2</dt>
+				<dd class="mb-3 text-zinc-600 text-sm">
+					Add the addEventListener() method to the reference variable
+				</dd>
+
+				<dt class="text-sm font-semibold text-zinc-900">Step 3</dt>
+				<dd class="mb-3 text-zinc-600 text-sm">
+					Add the event type as the first argument to the addEventListener()
+					method
+				</dd>
+				<dt class="text-sm font-semibold text-zinc-900">Step 4</dt>
+				<dd class="mb-3 text-zinc-600 text-sm">
+					Add a custom event handler function to the addEventListener() method.
+					Name this function so that the action of the event is clear.
+				</dd>
+				<dt class="text-sm font-semibold text-zinc-900">Step 5</dt>
+				<dd class="mb-3 text-zinc-600 text-sm">
+					Create the custome event handler function for the addEventListener()
+					method. Note that you should add the letter e between the brackets.
+					This is short for event. In the body of the function, between the two
+					curly braces change the background color of the body element.
+				</dd>
+			</dl>
+
+			<!-- <form> 
+				<div class="mb-6">
+					<label for="to" class="block text-sm -mb-2 font-medium text-zinc-600"
+						>Sending From</label
+					>
+					<div class="mt-2">
+						<input
+							id="from"
+							name="from"
+							type="from"
+							autocomplete="from"
+							placeholder="ex: Toronto"
+							class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+					</div>
+				</div>
+
+		 
+				<div class="flex items-center justify-end gap-x-6">
+					<button
+						type="reset"
+						class="rounded-md px-3 py-2 text-sm font-semibold text-zinc-600 shadow-sm shadow-zinc-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-600">
+						Reset
+					</button>
+					<button
+						type="submit"
+						class="rounded-md bg-rose-600 px-3 py-2 text-sm font-semibold text-rose-50 shadow-sm hover:bg-rose-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-600">
+						Calculate Rate
+					</button>
+				</div>
+			</form>  -->
+		</main>
+	</body>
+</html>
